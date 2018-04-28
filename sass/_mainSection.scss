@@ -1,0 +1,320 @@
+.mainWrapper {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px 10px 25px 10px;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    main {
+        background-color: white;
+        width: 100%;
+        #nav-tab {
+            display: flex;
+            a {
+                @media all and (max-width: 768px) {
+                    padding: 5px;
+                    width: 25%;
+                    &:nth-child(2) {
+                        width: 45%;
+                    }
+                }
+                @media all and (max-width: 768px) {
+                    align-self: flex-end;
+                    text-align: center;
+                    margin: 0 1px;
+                    text-align: center;
+                    padding: 5px;
+                    width: 23%;
+                    &:nth-child(2) {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+        .nav {
+            margin-top: 20px;
+            width: 100%;
+            a:first-child {
+                margin-left: 20px;
+            }
+            a {
+                padding: 10px 40px;
+                color: $main-blue
+            }
+            .nav-item[active] {
+                color: black;
+            }
+        }
+        .productTab {
+            padding: 15px;
+        }
+        h1 {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: darkblue;
+            padding: 0;
+            border-bottom: solid 1px $border-grey;
+        }
+        .filter {
+            @include products_section;
+            margin: 0;
+            margin-top: 25px;
+            padding-left: 0;
+            .filterSettings {
+                @media all and (max-width: 768px) {
+                    margin-bottom: 10px;
+                }
+            }
+            input {
+                @include button_border_radius;
+                padding: 5px;
+                font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                text-decoration: inherit;
+                &:focus::-webkit-input-placeholder {
+                    color: lightblue;
+                }
+                &:focus::-moz-placeholder {
+                    color: lightblue;
+                }
+                &:focus:-ms-input-placeholder {
+                    color: lightblue;
+                }
+                &:focus:-moz-placeholder {
+                    color: lightblue;
+                }
+            }
+            span {
+                margin-left: 15px;
+                color: $main-blue;
+                cursor: pointer;
+                line-height: 2.2;
+                @media all and (max-width: 473px) {
+                    line-height: 1;
+                }
+            }
+            .total {
+                background-color: rgb(254, 225, 169);
+                padding: 7px 20px;
+                color: rgb(99, 99, 99);
+                text-align: right;
+                @media all and (max-width: 768px) {
+                    text-align: center;
+                }
+            }
+        }
+        .newVersionDiv {
+            @include products_section;
+            .createNewBtn {
+                @include button_border_radius;
+                @include blue_button;
+                cursor: pointer;
+            }
+            .cog {
+                // .fa-wrench {
+                //     display: none;
+                // }
+                @include button_border_radius;
+                @include white_button;
+                border: solid 1px grey;
+                padding: 5px 10px;
+                width: 40px;
+                cursor: pointer;
+                .spinner {
+                    animation-duration: 200ms;
+                }
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(720deg);
+                    }
+                }
+                .spinner.spin {
+                    animation-name: spin;
+                }
+                 // &:hover .fa-wrench {
+                //     display: inline;
+                // }
+                // &:hover .fa-cog {
+                //     display: none;
+                // }
+            }
+        }
+        .tableDiv {
+            margin-top: 0;
+            .table {
+                overflow: visible;
+                border-top: none;
+                text-align: center;
+                margin-bottom: 100px;
+                @media all and (max-width: 992px) {
+                    overflow-x: scroll;
+                }
+            }
+            th:nth-child(1) {
+                width: 15%;
+            }
+            th:nth-child(2) {
+                width: 16%;
+            }
+            th:nth-child(3) {
+                width: 5%;
+            }
+            th:nth-child(4) {
+                width: 27%;
+            }
+            th:nth-child(5) {
+                width: 10%;
+            }
+            th:nth-child(6) {
+                width: 13%;
+            }
+            th:nth-child(7) {
+                width: 13%;
+            }
+            .table td,
+            .table th {
+                padding: 0;
+                padding: 15px 5px 5px 5px;
+                border-top: none;
+            }
+            button {
+                @include button_border_radius;
+                border: none;
+                line-height: 1.5;
+                cursor: pointer;
+                background-color: rgb(221, 221, 221);
+            }
+            .editButton {
+                width: 65px;
+                padding: 2px 5px;
+                position: relative;
+                @media all and (max-width: 1200px) {
+                    margin-bottom: 5px;
+                }
+            }
+            .popoverWrapper {
+                position: relative;
+                display: inline-block;
+                .optionsButton {
+                    padding: 2px 10px;
+                }
+                .popoverOptions {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 57px;
+                    left: 0;
+                    transform: translate(0, 10px);
+                    background-color: white;
+                    padding: 10px;
+                    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+                    min-width: 200px;
+                    &::before {
+                        position: absolute;
+                        z-index: -1;
+                        content: '';
+                        left: 5px;
+                        top: -8px;
+                        border-style: solid;
+                        border-width: 0 10px 10px 10px;
+                        border-color: transparent transparent white transparent;
+                        transition-duration: 0.3s;
+                        transition-property: transform;
+                    }
+                    ul {
+                        list-style: none;
+                        text-align: left;
+                        font-weight: normal;
+                        margin: 0;
+                        li {
+                            padding: 3px;
+                            &:hover {
+                                background-color: lightblue;
+                                color: gray;
+                            }
+                        }
+                    }
+                }
+                .visibilityClass {
+                    z-index: 100;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate(0, -20px);
+                    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+                }
+            }
+        }
+        .divider {
+            margin: 0 -15px;
+            height: 1px;
+            background-color: rgb(217, 217, 217);
+        }
+        .pageControls {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            button:hover {
+                cursor: pointer;
+            }
+            .saveAndBackBtn {
+                @include white_button;
+                padding: 5px 25px;
+                transition: all 0.5s;
+                @media all and (max-width: 568px) {
+                    margin-bottom: 10px;
+                }
+                span {
+                    display: inline-block;
+                    position: relative;
+                    transition: 0.5s;
+                }
+                span::before {
+                    content: "\f053";
+                    font-family: FontAwesome;
+                    font-style: normal;
+                    font-weight: normal;
+                    text-decoration: inherit;
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    left: -20px;
+                    transition: 0.5s;
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+                &:hover span {
+                    padding-left: 30px;
+                }
+                &:hover span::before {
+                    opacity: 1;
+                    left: 0;
+                }
+            }
+            .cancelSaveDiv {
+                text-align: right;
+                button {
+                    width: 100px;
+                }
+                button:nth-child(1) {
+                    background-color: white;
+                    color: $main-blue;
+                    border: none;
+                    &:focus {
+                        border: none;
+                        outline: none;
+                    }
+                }
+                button:nth-child(2) {
+                    @include blue_button;
+                    &:hover {
+                        @include button_shadow;
+                    }
+                }
+            }
+        }
+    }
+}

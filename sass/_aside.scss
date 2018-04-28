@@ -1,0 +1,45 @@
+aside {
+    background-color: rgb(98, 100, 102);
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @media all and (max-width: 1000px) {
+        display: none;
+        z-index: 999;
+    }
+    @media all and (min-width: 1000px) {
+        display: block;
+    }
+    .icons {
+        display: flex;
+        justify-content: space-around;
+    }
+    .icons i {
+        line-height: 7vh;
+        font-size: 1.3rem;
+        &:hover {
+            cursor: pointer;
+            color: $main-blue;
+        }
+    }
+    span {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .divider {
+        margin: 5px 0px 5px 0;
+        margin-left: -15px;
+        height: 1px;
+        width: 120%;
+        background-color: rgb(217, 217, 217);
+    }
+    .menuList {
+        list-style: none;
+        padding: 0;
+        li:hover {
+            cursor: pointer;
+            color: $main-blue;
+        }
+    }
+}

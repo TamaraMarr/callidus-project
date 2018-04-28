@@ -1,0 +1,27 @@
+@import 'mixins';
+@import 'variables';
+@import 'toggleButton';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body, .container {
+    min-height: 100%;
+}
+
+body {
+    background-color: rgb(234, 234, 234);
+}
+
+.content {
+    height: calc(100vh - 60px);
+    position: relative;
+}
+
+@import 'header';
+@import 'aside';
+@import 'mainSection';
+@import 'modal';

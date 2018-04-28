@@ -1,0 +1,29 @@
+{
+  "name": "callidus-project",
+  "version": "1.0.0",
+  "description": "products page view",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TamaraMarr/callidus-project.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "bootstrap"
+  ],
+  "author": "tamara mardjetko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TamaraMarr/callidus-project/issues"
+  },
+  "homepage": "https://github.com/TamaraMarr/callidus-project#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^8.0.0",
+    "popper.js": "^1.14.3"
+  }
+}
