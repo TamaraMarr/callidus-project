@@ -67,15 +67,18 @@
   margin: 0; }
 
 html,
-body, .container {
-  min-height: 100%; }
+body,
+.container {
+  min-height: 100vh; }
 
 body {
-  background-color: #eaeaea; }
+  background-color: #eaeaea;
+  height: 100%; }
 
 .content {
-  height: calc(100vh - 60px);
-  position: relative; }
+  position: relative;
+  min-height: 100vh;
+  height: 100%; }
 
 header {
   border-bottom: solid 3px #d9d9d9;
@@ -210,18 +213,15 @@ aside {
         -moz-border-radius: 5px;
         border-radius: 5px;
         padding: 5px;
+        padding-right: 15px;
         font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
         font-style: normal;
         font-weight: normal;
         text-decoration: inherit; }
-        .mainWrapper main .filter input:focus::-webkit-input-placeholder {
-          color: lightblue; }
-        .mainWrapper main .filter input:focus::-moz-placeholder {
-          color: lightblue; }
-        .mainWrapper main .filter input:focus:-ms-input-placeholder {
-          color: lightblue; }
-        .mainWrapper main .filter input:focus:-moz-placeholder {
-          color: lightblue; }
+        .mainWrapper main .filter input::-webkit-input-placeholder {
+          background: url("../assets/img/filter.svg") no-repeat right;
+          background-size: 1rem;
+          filter: opacity(25%); }
       .mainWrapper main .filter span {
         margin-left: 15px;
         color: #01abe3;
@@ -287,13 +287,21 @@ aside {
         width: 40px;
         cursor: pointer; }
         .mainWrapper main .newVersionDiv .cog .spinner {
+          -webkit-animation-duration: 200ms;
+          -moz-animation-duration: 200ms;
           animation-duration: 200ms; }
 @keyframes spin {
   from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
     transform: rotate(0deg); }
   to {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
     transform: rotate(720deg); } }
         .mainWrapper main .newVersionDiv .cog .spinner.spin {
+          -webkit-animation-name: spin;
+          -moz-animation-name: spin;
           animation-name: spin; }
     .mainWrapper main .tableDiv {
       margin-top: 0; }
@@ -346,7 +354,7 @@ aside {
           padding: 2px 10px; }
         .mainWrapper main .tableDiv .popoverWrapper .popoverOptions {
           opacity: 0;
-          visibility: hidden;
+          display: none;
           position: absolute;
           top: 57px;
           left: 0;
@@ -375,11 +383,11 @@ aside {
               padding: 3px; }
               .mainWrapper main .tableDiv .popoverWrapper .popoverOptions ul li:hover {
                 background-color: lightblue;
-                color: gray; }
+                color: #01abe3; }
         .mainWrapper main .tableDiv .popoverWrapper .visibilityClass {
           z-index: 100;
           opacity: 1;
-          visibility: visible;
+          display: inline;
           transform: translate(0, -20px);
           transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97); }
     .mainWrapper main .divider {

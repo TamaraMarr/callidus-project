@@ -68,21 +68,15 @@
             input {
                 @include button_border_radius;
                 padding: 5px;
+                padding-right: 15px;
                 font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
                 font-style: normal;
                 font-weight: normal;
                 text-decoration: inherit;
-                &:focus::-webkit-input-placeholder {
-                    color: lightblue;
-                }
-                &:focus::-moz-placeholder {
-                    color: lightblue;
-                }
-                &:focus:-ms-input-placeholder {
-                    color: lightblue;
-                }
-                &:focus:-moz-placeholder {
-                    color: lightblue;
+                &::-webkit-input-placeholder {
+                    background: url('../assets/img/filter.svg') no-repeat right;
+                    background-size: 1rem;
+                    filter: opacity(25%);
                 }
             }
             span {
@@ -112,9 +106,6 @@
                 cursor: pointer;
             }
             .cog {
-                // .fa-wrench {
-                //     display: none;
-                // }
                 @include button_border_radius;
                 @include white_button;
                 border: solid 1px grey;
@@ -122,25 +113,27 @@
                 width: 40px;
                 cursor: pointer;
                 .spinner {
+                    -webkit-animation-duration: 200ms; 
+                    -moz-animation-duration: 200ms;
                     animation-duration: 200ms;
                 }
                 @keyframes spin {
                     from {
+                        -webkit-transform: rotate(0deg);
+                        -moz-transform: rotate(0deg);
                         transform: rotate(0deg);
                     }
                     to {
+                        -webkit-transform: rotate(720deg);
+                        -moz-transform: rotate(720deg);
                         transform: rotate(720deg);
                     }
                 }
                 .spinner.spin {
+                    -webkit-animation-name: spin;
+                    -moz-animation-name: spin;
                     animation-name: spin;
                 }
-                 // &:hover .fa-wrench {
-                //     display: inline;
-                // }
-                // &:hover .fa-cog {
-                //     display: none;
-                // }
             }
         }
         .tableDiv {
@@ -204,7 +197,7 @@
                 }
                 .popoverOptions {
                     opacity: 0;
-                    visibility: hidden;
+                    display:none;
                     position: absolute;
                     top: 57px;
                     left: 0;
@@ -234,7 +227,7 @@
                             padding: 3px;
                             &:hover {
                                 background-color: lightblue;
-                                color: gray;
+                                color: $main-blue;
                             }
                         }
                     }
@@ -242,7 +235,7 @@
                 .visibilityClass {
                     z-index: 100;
                     opacity: 1;
-                    visibility: visible;
+                    display: inline;
                     transform: translate(0, -20px);
                     transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
                 }
