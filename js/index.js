@@ -29,6 +29,7 @@ $('ul li').click((event) => {
 $(".hamburger").click((event) => {
     if ($(window).width() <= 992 && !hamburgerClicked) {
         const height = $('main').outerHeight() + 10;
+        $('aside').fadeIn();
         $('aside').css({
             'display': 'inline',
             'float': 'left',
@@ -63,8 +64,9 @@ $('body').click((event) => {
 })
 
 $(window).on('resize', (event) => {
-    if ($(window).width() >= 992) {
+    if ($(window).outerWidth() >= 992) {
         const height = $('main').outerHeight() + 10;
+        $('aside').fadeIn();
         $('aside').css({
             'display': 'block',
             'height': height,
