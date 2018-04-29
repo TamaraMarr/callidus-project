@@ -42,10 +42,8 @@ $(".hamburger").click((event) => {
         });
 
         setTimeout(() => {
-            $('aside').css({
-                'display': 'none'
-            });
-        }, 300);
+            $('aside').fadeOut(100);
+        }, 200);
         hamburgerClicked = false;
     }
 });
@@ -53,14 +51,13 @@ $(".hamburger").click((event) => {
 $('body').click((event) => {
     if ($(window).width() <= 992 && event.target.localName !== 'aside' && event.target.localName !== 'span' && event.target.className !== 'fa fa-bars hamburger') {
         $('aside').css({
-            'transform': 'translateX(-180px)'
+            'transform': `translateX(-180px)`
         });
 
         setTimeout(() => {
-            $('aside').css({
-                'display': 'none'
-            });
-        }, 300);
+            $('aside').fadeOut(100);
+        }, 200);
+
         hamburgerClicked = false;
     }
 })
@@ -76,7 +73,7 @@ $(window).on('resize', (event) => {
     } else {
         $('aside').css({
             'display': 'none',
-            'transform': 'translateX(-180px)'
+            'transform': `translateX(-180px)`
         });
     }
 })
