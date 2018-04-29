@@ -11,8 +11,31 @@ header {
         text-align: center;
         line-height: 3.5;
         width: 100%;
+        @media all and (max-width: 992px) {
+            justify-content: flex-start;
+        }
         @media all and (max-width: 1200px) {
             font-size: 1rem;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+            @media all and (max-width: 992px) {
+                display: block;
+                line-height: 2.3;
+                font-size: 1.5rem;
+            }
+        }
+        .logo {
+            @media all and (max-width: 992px) {
+                display: none;
+            }
+            @media all and (min-width: 993px) {
+                display: inline;
+                color: white;
+                line-height: 3.5;
+                font-size: 1rem;
+            }
         }
     }
     .right {

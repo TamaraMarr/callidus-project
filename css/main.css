@@ -93,8 +93,28 @@ header {
     text-align: center;
     line-height: 3.5;
     width: 100%; }
+    @media all and (max-width: 992px) {
+      header .left {
+        justify-content: flex-start; } }
     @media all and (max-width: 1200px) {
       header .left {
+        font-size: 1rem; } }
+    header .left .hamburger {
+      cursor: pointer;
+      display: none; }
+      @media all and (max-width: 992px) {
+        header .left .hamburger {
+          display: block;
+          line-height: 2.3;
+          font-size: 1.5rem; } }
+    @media all and (max-width: 992px) {
+      header .left .logo {
+        display: none; } }
+    @media all and (min-width: 993px) {
+      header .left .logo {
+        display: inline;
+        color: white;
+        line-height: 3.5;
         font-size: 1rem; } }
   header .right {
     display: flex;
@@ -117,11 +137,24 @@ aside {
   position: absolute;
   top: 0;
   bottom: 0; }
-  @media all and (max-width: 1000px) {
+  @media all and (max-width: 992px) {
     aside {
       display: none;
-      z-index: 999; } }
-  @media all and (min-width: 1000px) {
+      z-index: 999;
+      transform: translateX(0%);
+      -webkit-animation: anim 0.5s;
+      animation: anim 0.5s; }
+    @-webkit-keyframes anim {
+      0% {
+        transform: translateX(-100%); }
+      100% {
+        transform: translateX(0); } }
+    @keyframes anim {
+      0% {
+        transform: translateX(-100%); }
+      100% {
+        transform: translateX(0); } } }
+  @media all and (min-width: 993px) {
     aside {
       display: block; } }
   aside .icons {
@@ -159,6 +192,8 @@ aside {
   .mainWrapper main {
     background-color: white;
     width: 100%; }
+    .mainWrapper main .tab-pane {
+      min-height: 100vh; }
     .mainWrapper main #nav-tab {
       display: flex; }
       @media all and (max-width: 768px) {

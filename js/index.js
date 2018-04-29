@@ -3,6 +3,7 @@ $(function () {
 })
 
 let eventTarget;
+let hamburgerClicked;
 
 $('main').click((event) => {
     $("." + eventTarget).removeClass('visibilityClass');
@@ -22,22 +23,38 @@ $('ul li').click((event) => {
     $('#modalContent').html(`<p>${event.target.innerHTML} <i class="fa fa-thumbs-up"></i><p>`);
 })
 
-$("body").on("mousemove", (event) => {
-    if ($(window).width() < 992 && event.pageX < 20) {
-        let height = $('main').outerHeight();
-        $('aside').css({'display': 'inline', 'float': 'left', 'height': height, 'transition': 'visibility 0s, opacity 0.5s linear'});
+$(".hamburger").click((event) => {
+    if ($(window).width() <= 992 && !hamburgerClicked) {
+        const height = $('main').outerHeight() + 10;
+        $('aside').css({
+            'display': 'inline',
+            'float': 'left',
+            'height': height
+        });
+        hamburgerClicked = true;
+    } else {
+        $('aside').css({
+            'display': 'none'
+        });
+        hamburgerClicked = false;
     }
+
 });
 
 $('body').click((event) => {
-    if ($(window).width() < 992 && event.target.localName !== 'aside' && event.target.localName !== 'span') {
+    if ($(window).width() <= 992 && event.target.localName !== 'aside' && event.target.localName !== 'span' && event.target.className !== 'fa fa-bars hamburger') {
         $('aside').css('display', 'none');
+        hamburgerClicked = false;
     }
 })
 
 $(window).on('resize', (event) => {
     if ($(window).width() >= 992) {
-        $('aside').css('display', 'block');
+        const height = $('main').outerHeight() + 10;
+        $('aside').css({
+            'display': 'block',
+            'height': height
+        });
     } else {
         $('aside').css('display', 'none');
     }
