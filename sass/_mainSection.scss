@@ -95,10 +95,7 @@
                 background-color: rgb(254, 225, 169);
                 padding: 7px 20px;
                 color: rgb(99, 99, 99);
-                text-align: right;
-                @media all and (max-width: 768px) {
-                    text-align: center;
-                }
+                text-align: center;
             }
         }
         .newVersionDiv {
@@ -303,25 +300,39 @@
     }
 }
 
-@-webkit-keyframes spin {
-    from {
+@-moz-keyframes spin {
+    0% {
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    to {
+    100% {
         -webkit-transform: rotate(720deg);
         -moz-transform: rotate(720deg);
         transform: rotate(720deg);
     }
 }
-@keyframes spin {
-    from {
+
+@-webkit-keyframes spin {
+    0% {
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    to {
+    100% {
+        -webkit-transform: rotate(720deg);
+        -moz-transform: rotate(720deg);
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
         -webkit-transform: rotate(720deg);
         -moz-transform: rotate(720deg);
         transform: rotate(720deg);

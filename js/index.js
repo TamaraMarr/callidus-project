@@ -4,6 +4,8 @@ let hamburgerClicked = false;
 // popover functions
 $(function () {
     $('[data-toggle="popover"]').popover();
+    const height = $('main').outerHeight() + 10;
+    $('aside').css('height', height);
 })
 
 $('main').click((event) => {

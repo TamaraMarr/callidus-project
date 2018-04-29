@@ -260,10 +260,7 @@ aside {
         background-color: #fee1a9;
         padding: 7px 20px;
         color: #636363;
-        text-align: right; }
-        @media all and (max-width: 768px) {
-          .mainWrapper main .filter .total {
-            text-align: center; } }
+        text-align: center; }
     .mainWrapper main .newVersionDiv {
       display: flex;
       align-items: center;
@@ -490,21 +487,30 @@ aside {
             -moz-box-shadow: 0px 3px 10px 1px #969696;
             box-shadow: 0px 3px 10px 1px #969696; }
 
-@-webkit-keyframes spin {
-  from {
+@-moz-keyframes spin {
+  0% {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     transform: rotate(0deg); }
-  to {
+  100% {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    transform: rotate(720deg); } }
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
     -webkit-transform: rotate(720deg);
     -moz-transform: rotate(720deg);
     transform: rotate(720deg); } }
 @keyframes spin {
-  from {
+  0% {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     transform: rotate(0deg); }
-  to {
+  100% {
     -webkit-transform: rotate(720deg);
     -moz-transform: rotate(720deg);
     transform: rotate(720deg); } }
