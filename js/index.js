@@ -1,9 +1,10 @@
+let eventTarget;
+let hamburgerClicked = false;
+
+// popover functions
 $(function () {
     $('[data-toggle="popover"]').popover();
 })
-
-let eventTarget;
-let hamburgerClicked;
 
 $('main').click((event) => {
     $("." + eventTarget).removeClass('visibilityClass');
@@ -19,31 +20,47 @@ $('main').click((event) => {
     }
 })
 
+// modal content
 $('ul li').click((event) => {
     $('#modalContent').html(`<p>${event.target.innerHTML} <i class="fa fa-thumbs-up"></i><p>`);
 })
 
+// side menu triggers
 $(".hamburger").click((event) => {
     if ($(window).width() <= 992 && !hamburgerClicked) {
         const height = $('main').outerHeight() + 10;
         $('aside').css({
             'display': 'inline',
             'float': 'left',
-            'height': height
+            'height': height,
+            'transform': 'translateX(0px)'
         });
         hamburgerClicked = true;
     } else {
         $('aside').css({
-            'display': 'none'
+            'transform': 'translateX(-180px)'
         });
+
+        setTimeout(() => {
+            $('aside').css({
+                'display': 'none'
+            });
+        }, 300);
         hamburgerClicked = false;
     }
-
 });
 
 $('body').click((event) => {
     if ($(window).width() <= 992 && event.target.localName !== 'aside' && event.target.localName !== 'span' && event.target.className !== 'fa fa-bars hamburger') {
-        $('aside').css('display', 'none');
+        $('aside').css({
+            'transform': 'translateX(-180px)'
+        });
+
+        setTimeout(() => {
+            $('aside').css({
+                'display': 'none'
+            });
+        }, 300);
         hamburgerClicked = false;
     }
 })
@@ -53,13 +70,18 @@ $(window).on('resize', (event) => {
         const height = $('main').outerHeight() + 10;
         $('aside').css({
             'display': 'block',
-            'height': height
+            'height': height,
+            'transform': 'translateX(0px)'
         });
     } else {
-        $('aside').css('display', 'none');
+        $('aside').css({
+            'display': 'none',
+            'transform': 'translateX(-180px)'
+        });
     }
 })
 
+// icon spinner
 $('.spinner').hover(() => {
     $('#spinner').toggleClass('spin fa-wrench fa-cog');
 }, () => {

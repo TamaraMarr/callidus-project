@@ -116,21 +116,9 @@
                 width: 40px;
                 cursor: pointer;
                 .spinner {
-                    -webkit-animation-duration: 200ms; 
+                    -webkit-animation-duration: 200ms;
                     -moz-animation-duration: 200ms;
                     animation-duration: 200ms;
-                }
-                @keyframes spin {
-                    from {
-                        -webkit-transform: rotate(0deg);
-                        -moz-transform: rotate(0deg);
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        -webkit-transform: rotate(720deg);
-                        -moz-transform: rotate(720deg);
-                        transform: rotate(720deg);
-                    }
                 }
                 .spinner.spin {
                     -webkit-animation-name: spin;
@@ -200,7 +188,7 @@
                 }
                 .popoverOptions {
                     opacity: 0;
-                    display:none;
+                    display: none;
                     position: absolute;
                     top: 57px;
                     left: 0;
@@ -312,5 +300,30 @@
                 }
             }
         }
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(720deg);
+        -moz-transform: rotate(720deg);
+        transform: rotate(720deg);
+    }
+}
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(720deg);
+        -moz-transform: rotate(720deg);
+        transform: rotate(720deg);
     }
 }

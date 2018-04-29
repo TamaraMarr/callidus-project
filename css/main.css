@@ -141,19 +141,10 @@ aside {
     aside {
       display: none;
       z-index: 999;
-      transform: translateX(0%);
-      -webkit-animation: anim 0.5s;
-      animation: anim 0.5s; }
-    @-webkit-keyframes anim {
-      0% {
-        transform: translateX(-100%); }
-      100% {
-        transform: translateX(0); } }
-    @keyframes anim {
-      0% {
-        transform: translateX(-100%); }
-      100% {
-        transform: translateX(0); } } }
+      width: 0;
+      overflow: hidden;
+      transform: translateX(-180px);
+      transition: transform 300ms ease-in-out; } }
   @media all and (min-width: 993px) {
     aside {
       display: block; } }
@@ -325,15 +316,6 @@ aside {
           -webkit-animation-duration: 200ms;
           -moz-animation-duration: 200ms;
           animation-duration: 200ms; }
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    transform: rotate(720deg); } }
         .mainWrapper main .newVersionDiv .cog .spinner.spin {
           -webkit-animation-name: spin;
           -moz-animation-name: spin;
@@ -508,6 +490,24 @@ aside {
             -moz-box-shadow: 0px 3px 10px 1px #969696;
             box-shadow: 0px 3px 10px 1px #969696; }
 
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    transform: rotate(720deg); } }
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    transform: rotate(720deg); } }
 #modalContent {
   top: 200px;
   min-height: 10rem;

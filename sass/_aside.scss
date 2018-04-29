@@ -7,25 +7,10 @@ aside {
     @media all and (max-width: 992px) {
         display: none;
         z-index: 999;
-        transform: translateX(0%);
-        -webkit-animation: anim 0.5s;
-        animation: anim 0.5s;
-        @-webkit-keyframes anim {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-        @keyframes anim {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
+        width: 0;
+        overflow: hidden;
+        transform: translateX(-180px);
+        transition: transform 300ms ease-in-out;
     }
     @media all and (min-width: 993px) {
         display: block;
