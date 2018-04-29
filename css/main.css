@@ -173,6 +173,13 @@ aside {
       cursor: pointer;
       color: #01abe3; }
 
+.sideMenuShown {
+  display: inline;
+  transform: translateX(0px); }
+
+.sideMenuHidden {
+  transform: translateX(-180px); }
+
 .mainWrapper {
   box-sizing: border-box;
   height: 100%;

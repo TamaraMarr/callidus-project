@@ -31,18 +31,14 @@ $('ul li').click((event) => {
 $(".hamburger").click((event) => {
     if ($(window).width() <= 992 && !hamburgerClicked) {
         const height = $('main').outerHeight() + 10;
-        $('aside').fadeIn();
-        $('aside').css({
-            'display': 'inline',
-            'float': 'left',
-            'height': height,
-            'transform': 'translateX(0px)'
-        });
+        $('aside').fadeIn()
+                  .removeClass('sideMenuHidden')
+                  .addClass('sideMenuShown')
+                  .css('height', height);
         hamburgerClicked = true;
     } else {
-        $('aside').css({
-            'transform': 'translateX(-180px)'
-        });
+        $('aside').removeClass('sideMenuShown')
+                  .addClass('sideMenuHidden');
 
         setTimeout(() => {
             $('aside').fadeOut(100);
@@ -53,9 +49,8 @@ $(".hamburger").click((event) => {
 
 $('body').click((event) => {
     if ($(window).width() <= 992 && event.target.localName !== 'aside' && event.target.localName !== 'span' && event.target.className !== 'fa fa-bars hamburger') {
-        $('aside').css({
-            'transform': `translateX(-180px)`
-        });
+        $('aside').removeClass('sideMenuShown')
+                  .addClass('sideMenuHidden');
 
         setTimeout(() => {
             $('aside').fadeOut(100);
@@ -68,22 +63,19 @@ $('body').click((event) => {
 $(window).on('resize', (event) => {
     if ($(window).outerWidth() >= 992) {
         const height = $('main').outerHeight() + 10;
-        $('aside').fadeIn();
-        $('aside').css({
-            'display': 'block',
-            'height': height,
-            'transform': 'translateX(0px)'
-        });
+        $('aside').fadeIn()
+                  .removeClass('sideMenuHidden')
+                  .addClass('sideMenuShown')
+                  .css('height', height);
     } else {
-        $('aside').css({
-            'display': 'none',
-            'transform': `translateX(-180px)`
-        });
+        $('aside').css('display', 'none')
+                  .removeClass('sideMenuShown')
+                  .addClass('sideMenuHidden');
     }
 })
 
 // icon spinner
-$('.spinner').hover(() => {
+$('.cog').hover(() => {
     $('#spinner').toggleClass('spin fa-wrench fa-cog');
 }, () => {
     $('#spinner').toggleClass('spin fa-wrench fa-cog');
